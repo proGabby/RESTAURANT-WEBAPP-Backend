@@ -7,7 +7,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	routes "github.com/willie/restaurant-backend/routes"
+
+	database "github.com/willie/restaurant-backend/database"
 )
+
+var foodMongoCollection = database.OpenCollection(database.Client, "Food-Items")
 
 func main() {
 	err := godotenv.Load(".env")
